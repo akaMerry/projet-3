@@ -29,7 +29,6 @@ $bottom-gradient: linear-gradient(to bottom, $omf-purple, $omf-pink);
 }
 
 @mixin h1 {
-display: flex;
 font-size: 24px;
 font-weight: 700;
 margin: 0;
@@ -82,13 +81,13 @@ background-color: white;
 position: relative;
 z-index: 2;
 box-shadow: 0 2px 4px 0 #00000026;
-@media (min-width: 1281px) and (max-width: 1440px) {
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
   box-shadow: none;
 }
-.logo__image {
+.logo-img {
 max-height: 35px;
 padding: 14px 0;
-@media (min-width: 1281px) and (max-width: 1440px) {
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
   padding: 30px 0;
 }
 }
@@ -101,13 +100,13 @@ color: $omf-dark-grey;
 position: relative;
 z-index: 1;
 box-shadow: 0 4px 4px 0 #00000040;
-@media (min-width: 1281px) and (max-width: 1440px) {
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
   box-shadow: none;
 }
-  .location__icon {
+  .location-icon {
 padding-right: 18px;
   }
-  .location__txt {
+  .location-txt {
   font-weight: 500;
   }
   }
@@ -119,27 +118,27 @@ main {
   @include center;
   background-color: $omf-light-grey;
   padding: 45px 30px;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
   padding: 30px 30px;
   }
- .explore__title {
+ .explore-title {
   padding: 0 10px;
   @include h1;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     font-size: 40px;
     margin-bottom: 15px;
   }
   }
-  .explore__txt {
+  .explore-txt {
     color: $omf-dark-grey;
     font-weight: 300;
   }
- .explore__btn {
+ .explore-btn {
   @include button;
-  @media (min-width: 375px) and (max-width: 1280px) {
+  @media screen and (min-width: 375px) and (max-width: 1280px) {
     margin: 15px 0;
     }
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     margin-top: 15px;
     }
   }
@@ -147,10 +146,10 @@ main {
 
   .howto {
     padding: 50px 22px;
-    @media (min-width: 1281px) and (max-width: 1440px) {
+    @media screen and (min-width: 1281px) and (max-width: 1440px) {
       padding: 50px 180px;
       }
-    .howto__title {
+    .howto-title {
       @include h1;
       margin-bottom: 1rem;
       }
@@ -158,7 +157,7 @@ main {
     display: grid;
     flex-direction: column;
     padding-left: 10px;
-    @media (min-width: 1281px) and (max-width: 1440px) {
+    @media screen and (min-width: 1281px) and (max-width: 1440px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -209,20 +208,20 @@ main {
   .restaurants {
   background-color: $omf-light-grey;
   padding: 50px 20px;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     padding: 30px 180px;
     }
-  .restaurants__title {
+  .restaurants-title {
   @include h1;
   margin-bottom: 10px;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     margin-bottom: 15px;
     }
 }
   .restaurants__card-list {
   display: flex;
   flex-direction: column;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
   display: grid;
     grid-template-columns: 45% 45%;
     justify-items: center;
@@ -234,7 +233,7 @@ main {
     @include card;
     box-shadow: 0 4px 15px 0 #0000001A;
     margin: 9px 0;
-    @media (min-width: 1281px) and (max-width: 1440px) {
+    @media screen and (min-width: 1281px) and (max-width: 1440px) {
     width: 490px;
       }
     .restaurants__card-tag {
@@ -249,7 +248,7 @@ main {
       border-radius: 4px;
       margin-left: 225px;
       margin-top: 15px;
-      @media (min-width: 1281px) and (max-width: 1440px) {
+      @media screen and (min-width: 1281px) and (max-width: 1440px) {
         margin-left: 395px;
         margin-top: 15px;
           }
@@ -262,26 +261,28 @@ main {
       border-radius: 20px 20px 0 0;
     }
     .restaurants__card-content {
-    .restaurants__card-txt {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: 50% 50%;
-    padding: 10px 15px;
-    }
-    .restaurants__card-title {
-    font-weight: 700;
-    margin: 2px 0;
-    }
-    .restaurants__card-detail {
-      font-weight: 300;
-      margin: 2px 0;
-    }
-    .restaurants__card-icon {
-    display: flex;
-    @include center;
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-     }
+      .restaurants__card-txt {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 50% 50%;
+        padding: 10px 15px;
+        .restaurants__card-title {
+          font-weight: 700;
+          margin: 2px 0;
+          }
+          .restaurants__card-detail {
+            font-weight: 300;
+            margin: 2px 0;
+          }
+          .restaurants__card-icon {
+          @include center;
+          grid-column: 2 / 3;
+          grid-row: 1 / 3;
+          }
+          .fa-solid {
+            //Comment faire le dégradé ? //
+          }
+        }
     }
   }
 }
@@ -292,7 +293,7 @@ footer {
   padding: 25px 30px;
   background-color: $omf-dark-grey;
   color: white;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -302,21 +303,21 @@ footer {
   font-size: 18px;
   font-weight: 400;
   font-style: italic;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
 padding-left: 100px;
     }
 }
 .footer {
   padding-top: 15px;
   display: grid;
-  @media (min-width: 1281px) and (max-width: 1440px) {
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
     display: flex;
       flex-direction: row;
       padding-top: 0;
     }
   .footer__link {
     padding: 4px 0;
-    @media (min-width: 1281px) and (max-width: 1440px) {
+    @media screen and (min-width: 1281px) and (max-width: 1440px) {
       display: flex;
       padding: 0 15px;
       }
@@ -328,13 +329,13 @@ padding-left: 100px;
     padding: 4px 0;
     i {
       grid-column: 1/ 2;
-      @media (min-width: 1281px) and (max-width: 1440px) {
+      @media screen and (min-width: 1281px) and (max-width: 1440px) {
         display: flex;
           flex-direction: row;
           padding: 0 10px;
         }
     }
-    @media (min-width: 1281px) and (max-width: 1440px) {
+    @media screen and (min-width: 1281px) and (max-width: 1440px) {
       display: flex;
         flex-direction: row;
         padding: 0 10px;
