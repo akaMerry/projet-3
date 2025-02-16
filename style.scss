@@ -58,12 +58,11 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 }
 
 @mixin tag {
-  z-index: 3;
+  z-index: 2;
   border: none;
   position: absolute;
   span {
     font-weight: 500;
-    // si span est empty alors display : none ? //
   }
 }
 
@@ -74,38 +73,63 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
   text-align: center;
 }
 
-@mixin fade-in {
-  opacity: 1;
-  animation-name: fadeIn;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.25s;
+@mixin loading-circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  margin: 0 10px;
+  box-shadow: 0px 4px 15px 0px #0000001a;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+
+@mixin fade-in {
+  animation: fadeIn 0.25s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
-@mixin gelatine {
-  animation-name: gelatine;
-  animation-duration: 0.5s;
+@mixin fade-out {
+  animation: fadeOut 1s 2s forwards;
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 }
-@keyframes gelatine {
-  from,
-  to {
-    transform: scale(1, 1);
+
+@mixin gummy {
+  animation-name: gummy, fadeIn;
+  animation-duration: 0.5s, 0.25s;
+  @keyframes gummy {
+    0% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.98, 1.02);
+    }
   }
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.98, 1.02);
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -127,7 +151,120 @@ body {
     width: 100%;
     max-width: 1440px;
     box-sizing: content-box;
-
+    position: relative;
+    .loader {
+      @include fade-out;
+      position: absolute;
+      z-index: 3;
+      justify-content: center;
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      .loader__logo {
+        @include center;
+        background-color: white;
+        position: relative;
+        @include desktop {
+          box-shadow: none;
+        }
+        .logo-img {
+          max-height: 35px;
+          padding: 14px 0;
+          @include desktop {
+            padding: 30px 0;
+          }
+        }
+      }
+      .loader__animation {
+        @include flex;
+        @include center;
+        margin-top: 100px;
+        .circle-1 {
+          @include loading-circle;
+          background-color: $omf-pink;
+          animation: bounce 1s ease 3;
+          @keyframes bounce {
+            70% {
+              transform: translateY(0%);
+            }
+            80% {
+              transform: translateY(-15%);
+            }
+            90% {
+              transform: translateY(0%);
+            }
+            95% {
+              transform: translateY(-7%);
+            }
+            97% {
+              transform: translateY(0%);
+            }
+            99% {
+              transform: translateY(-3%);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
+        .circle-2 {
+          @include loading-circle;
+          background-color: #c669dc;
+          animation: bounce 1s ease 0.3s 3;
+          @keyframes bounce {
+            70% {
+              transform: translateY(0%);
+            }
+            80% {
+              transform: translateY(-15%);
+            }
+            90% {
+              transform: translateY(0%);
+            }
+            95% {
+              transform: translateY(-7%);
+            }
+            97% {
+              transform: translateY(0%);
+            }
+            99% {
+              transform: translateY(-3%);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
+        .circle-3 {
+          @include loading-circle;
+          background-color: $omf-purple;
+          animation: bounce 1s ease 0.6s 3;
+          @keyframes bounce {
+            70% {
+              transform: translateY(0%);
+            }
+            80% {
+              transform: translateY(-15%);
+            }
+            90% {
+              transform: translateY(0%);
+            }
+            95% {
+              transform: translateY(-7%);
+            }
+            97% {
+              transform: translateY(0%);
+            }
+            99% {
+              transform: translateY(-3%);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
     header {
       .logo {
         @include center;
@@ -302,7 +439,7 @@ body {
               color: $omg-dark-green;
               width: 80px;
               height: 30px;
-              border-radius: 4px;
+              border-radius: 2px;
               right: 15px;
               margin-top: 15px;
             }
@@ -354,7 +491,7 @@ body {
                       display: flex;
                       cursor: pointer;
                       @include fade-in;
-                      @include gelatine;
+                      @include gummy;
                       img {
                         width: 24px;
                       }

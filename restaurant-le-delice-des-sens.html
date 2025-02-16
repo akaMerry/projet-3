@@ -23,6 +23,16 @@
 
   <body>
     <div class="main-container">
+      <div class="loader">
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="./images/logo/ohmyfood.png"
+            alt="Logo de Oh my food"
+          />
+          <i class="logo-icon"></i>
+        </div>
+      </div>
       <header>
         <div class="header__icon">
           <a href="index.html"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
@@ -43,7 +53,7 @@
         </div>
         <div class="menu">
           <div class="menu__header">
-            <div class="menu__header-title"><h1>La Palette du goût</h1></div>
+            <div class="menu__header-title"><h1>Le Délice des sens</h1></div>
             <div class="menu__header-like">
               <input type="checkbox" id="like" />
               <label for="like">
@@ -72,8 +82,8 @@
               <input type="checkbox" id="menu__course-1__meal-1" />
               <label for="menu__course-1__meal-1">
                 <div class="card-content">
-                  <p class="card-dish">Fricassée d'escargots</p>
-                  <p class="card-detail">Au piment d'Espelette</p>
+                  <p class="card-dish">Tartare de thon</p>
+                  <p class="card-detail">Assaisonné au yuzu</p>
                   <p class="card-price">25€</p>
                 </div>
                 <div class="menu-checked">
@@ -86,8 +96,8 @@
               <input type="checkbox" id="menu__course-1__meal-2" />
               <label for="menu__course-1__meal-2">
                 <div class="card-content">
-                  <p class="card-dish">Foie gras de canard mi-cuit</p>
-                  <p class="card-detail">Et ses copeaux de truffe noire</p>
+                  <p class="card-dish">Bouchée de homard croustillant</p>
+                  <p class="card-detail">Et sa farandole de petits légumes</p>
                   <p class="card-price">35€</p>
                 </div>
                 <div class="menu-checked">
@@ -100,10 +110,8 @@
               <input type="checkbox" id="menu__course-1__meal-3" />
               <label for="menu__course-1__meal-3">
                 <div class="card-content">
-                  <p class="card-dish">Œuf au plat</p>
-                  <p class="card-detail">
-                    Assaisonné à la truffe sur lit de caviar
-                  </p>
+                  <p class="card-dish">Velouté de cèpes</p>
+                  <p class="card-detail">Aux truffes</p>
                   <p class="card-price">20€</p>
                 </div>
                 <div class="menu-checked">
@@ -114,7 +122,7 @@
           </div>
 
           <div class="menu__course-2">
-            <div class="menu__course-2__title">
+            <div class="menu__course-1__title">
               <h2>plats</h2>
               <div></div>
             </div>
@@ -123,10 +131,8 @@
               <input type="checkbox" id="menu__course-2__meal-1" />
               <label for="menu__course-2__meal-1">
                 <div class="card-content">
-                  <p class="card-dish">Filet de bœuf aux herbes</p>
-                  <p class="card-detail">
-                    Accompagné de sa ribambelle de légumes
-                  </p>
+                  <p class="card-dish">Poulet rôti aux herbes de Provence</p>
+                  <p class="card-detail">Et sa crème de truffe</p>
                   <p class="card-price">40€</p>
                 </div>
                 <div class="menu-checked">
@@ -139,10 +145,8 @@
               <input type="checkbox" id="menu__course-2__meal-2" />
               <label for="menu__course-2__meal-2">
                 <div class="card-content">
-                  <p class="card-dish">Parmentier de queue de bœuf</p>
-                  <p class="card-detail">
-                    À la truffe noire sur sa purée de panais
-                  </p>
+                  <p class="card-dish">Langouste rôtie</p>
+                  <p class="card-detail">Et ses légumes de saison</p>
                   <p class="card-price">35€</p>
                 </div>
                 <div class="menu-checked">
@@ -155,8 +159,8 @@
               <input type="checkbox" id="menu__course-2__meal-3" />
               <label for="menu__course-2__meal-3">
                 <div class="card-content">
-                  <p class="card-dish">Filet de turbot</p>
-                  <p class="card-detail">Aux agrumes</p>
+                  <p class="card-dish">Côte de bœuf Angus</p>
+                  <p class="card-detail">Et sa purée de panais</p>
                   <p class="card-price">44€</p>
                 </div>
                 <div class="menu-checked">
@@ -176,8 +180,8 @@
               <input type="checkbox" id="menu__course-3__meal-1" />
               <label for="menu__course-3__meal-1">
                 <div class="card-content">
-                  <p class="card-dish">Paris-Brest</p>
-                  <p class="card-detail">Revisité</p>
+                  <p class="card-dish">Farandole de desserts</p>
+                  <p class="card-detail">Du chef</p>
                   <p class="card-price">18€</p>
                 </div>
                 <div class="menu-checked">
@@ -190,8 +194,8 @@
               <input type="checkbox" id="menu__course-3__meal-2" />
               <label for="menu__course-3__meal-2">
                 <div class="card-content">
-                  <p class="card-dish">Macaron au chocolat d'exception</p>
-                  <p class="card-detail">Et glace à la vanille de Madagascar</p>
+                  <p class="card-dish">Crème brulée</p>
+                  <p class="card-detail">Revisitée</p>
                   <p class="card-price">22€</p>
                 </div>
                 <div class="menu-checked">
@@ -204,10 +208,8 @@
               <input type="checkbox" id="menu__course-3__meal-3" />
               <label for="menu__course-3__meal-3">
                 <div class="card-content">
-                  <p class="card-dish">Mousse au chocolat</p>
-                  <p class="card-detail">
-                    Au piment d'Espelette et à la truffe noire
-                  </p>
+                  <p class="card-dish">Tiramisu</p>
+                  <p class="card-detail">À la noisette</p>
                   <p class="card-price">23€</p>
                 </div>
                 <div class="menu-checked">
