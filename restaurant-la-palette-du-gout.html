@@ -4,94 +4,246 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oh my food</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="menu-style.scss" />
   </head>
 
   <body>
-  <div class="main-container">
-
+    <div class="main-container">
       <header>
         <div class="header__icon">
-          <i class="fa-solid fa-arrow-left fa-lg"></i>
+          <a href="index.html"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
         </div>
         <div class="logo">
-          <img
-          src="./images/logo/ohmyfood.png"
-          alt="Logo de Oh my food"/>
+          <a href="index.html"
+            ><img src="./images/logo/ohmyfood.png" alt="Logo de Oh my food"
+          /></a>
         </div>
       </header>
 
-  <main>
-    <img class="restaurant-img"
-          src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-          alt="Illustration du restaurant La Palette du goût"/>
+      <main>
+        <div class="restaurant-img">
+          <img
+            src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+            alt="Illustration du restaurant La Palette du goût"
+          />
+        </div>
+        <div class="menu">
+          <div class="menu__header">
+            <div class="menu__header-title"><h1>La Palette du goût</h1></div>
+            <div class="menu__header-like">
+              <input type="checkbox" id="like" />
+              <label for="like">
+                <div class="no-like">
+                  <img
+                    src="./images/icones/heart-regular.svg"
+                    alt="Coeur vide"
+                  />
+                </div>
+                <div class="like">
+                  <img
+                    src="./images/icones/heart-solid.svg"
+                    alt="Coeur plein"
+                  /></div
+              ></label>
+            </div>
+          </div>
 
-    <section class="menu">
-<div class="menu__header">
-  <h1 class="menu__header-title">La Palette du goût</h1>
-  <i class="menu__header-icon fa-regular fa-heart fa-xl"></i>
-</div>
+          <div class="menu__course-1">
+            <h2>
+              entrées
+              <div></div>
+            </h2>
 
-<div class="menu__appetizers">
-<h2>entrées<div></div></h2>
+            <article class="card">
+              <input type="checkbox" id="menu__course-1__meal-1" />
+              <label for="menu__course-1__meal-1">
+                <div class="card-content">
+                  <p class="card-dish">Fricassée d'escargots</p>
+                  <p class="card-detail">Au piment d'Espelette</p>
+                  <p class="card-price">25€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
 
-<article class="card">
-  <div class="card-content">
-    <p class="card-dish">kerf,qmlkdrgmldkrfji</p>
-    <p class="card-detail">krsgrmqldfgmljdfg</p>
-    <p class="card-price">18€</p>
-  </div>
-</article>
+            <article class="card">
+              <input type="checkbox" id="menu__course-1__meal-2" />
+              <label for="menu__course-1__meal-2">
+                <div class="card-content">
+                  <p class="card-dish">Foie gras de canard mi-cuit</p>
+                  <p class="card-detail">Et ses copeaux de truffe noire</p>
+                  <p class="card-price">35€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
 
-<article class="card">
-  <div class="card-content">
-    <p class="card-dish">test</p>
-    <p class="card-detail">test</p>
-    <p class="card-price">test</p>
-  </div>
-</article>
+            <article class="card">
+              <input type="checkbox" id="menu__course-1__meal-3" />
+              <label for="menu__course-1__meal-3">
+                <div class="card-content">
+                  <p class="card-dish">Œuf au plat</p>
+                  <p class="card-detail">
+                    Assaisonné à la truffe sur lit de caviar
+                  </p>
+                  <p class="card-price">20€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
+          </div>
 
-</div>
+          <div class="menu__course-2">
+            <h2>
+              plats
+              <div></div>
+            </h2>
 
-<div class="menu__main-dishes">
-  <h2>plats<div></div></h2>
+            <article class="card">
+              <input type="checkbox" id="menu__course-2__meal-1" />
+              <label for="menu__course-2__meal-1">
+                <div class="card-content">
+                  <p class="card-dish">Filet de bœuf aux herbes</p>
+                  <p class="card-detail">
+                    Accompagné de sa ribambelle de légumes
+                  </p>
+                  <p class="card-price">40€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
 
-</div>
+            <article class="card">
+              <input type="checkbox" id="menu__course-2__meal-2" />
+              <label for="menu__course-2__meal-2">
+                <div class="card-content">
+                  <p class="card-dish">Parmentier de queue de bœuf</p>
+                  <p class="card-detail">
+                    À la truffe noire sur sa purée de panais
+                  </p>
+                  <p class="card-price">35€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
 
-<div class="menu__desserts">
-  <h2>desserts<div></div></h2>
+            <article class="card">
+              <input type="checkbox" id="menu__course-2__meal-3" />
+              <label for="menu__course-2__meal-3">
+                <div class="card-content">
+                  <p class="card-dish">Filet de turbot</p>
+                  <p class="card-detail">Aux agrumes</p>
+                  <p class="card-price">44€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
+          </div>
 
-</div>
-    </section>
-<div class="order">
-    <button class="order-btn" type="submit">
-      <span>Commander</span>
-    </button>
-  </div>
-  </main>
+          <div class="menu__course-3">
+            <h2>
+              desserts
+              <div></div>
+            </h2>
 
-  <footer>
-    <span class="footer__logo">ohmyfood</span>
-    <div class="footer">
-      <div class="footer__link-highlight">
-      <i class="footer-icon fa-solid fa-utensils"></i><a href="#"> Proposer un restaurant</a>
+            <article class="card">
+              <input type="checkbox" id="menu__course-3__meal-1" />
+              <label for="menu__course-3__meal-1">
+                <div class="card-content">
+                  <p class="card-dish">Paris-Brest</p>
+                  <p class="card-detail">Revisité</p>
+                  <p class="card-price">18€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
+
+            <article class="card">
+              <input type="checkbox" id="menu__course-3__meal-2" />
+              <label for="menu__course-3__meal-2">
+                <div class="card-content">
+                  <p class="card-dish">Macaron au chocolat d'exception</p>
+                  <p class="card-detail">Et glace à la vanille de Madagascar</p>
+                  <p class="card-price">22€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
+
+            <article class="card">
+              <input type="checkbox" id="menu__course-3__meal-3" />
+              <label for="menu__course-3__meal-3">
+                <div class="card-content">
+                  <p class="card-dish">Mousse au chocolat</p>
+                  <p class="card-detail">
+                    Au piment d'Espelette et à la truffe noire
+                  </p>
+                  <p class="card-price">23€</p>
+                </div>
+                <div class="menu-checked">
+                  <i class="fa-solid fa-circle-check fa-lg"></i>
+                </div>
+              </label>
+            </article>
+          </div>
+
+          <div class="order">
+            <button class="order-btn" type="submit">
+              <span>Commander</span>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <span class="footer__logo">ohmyfood</span>
+        <div class="footer">
+          <div class="footer__link-highlight">
+            <i class="footer-icon fa-solid fa-utensils"></i
+            ><a href="#">Proposer un restaurant</a>
+          </div>
+          <div class="footer__link-highlight">
+            <i class="footer__icon fa-solid fa-handshake-angle"></i
+            ><a href="#">Devenir partenaire</a>
+          </div>
+          <div class="footer__link">
+            <a href="#">Mentions légales</a>
+          </div>
+          <div class="footer__link">
+            <a href="mailto:bonjour@ohmyfood.com">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
-    <div class="footer__link-highlight">
-    <i class="footer__icon fa-solid fa-handshake-angle"></i><a href="#"></i> Devenir partenaire</a>
-  </div>
-    <div class="footer__link">
-      <a href="#">Mentions légales</a>
-    </div>
-      <div class="footer__link">
-      <a href="#">Contact</a>
-    </div>
-    </div>
-  </footer>
-  </div>
   </body>
 </html>

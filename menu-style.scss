@@ -1,19 +1,35 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Shrikhand&display=swap";
 
-$omf-purple: #9356DC;
-$omf-pink: #FF79DA;
-$omf-green: #99E2D0;
+// fonctions //
+$omf-purple: #9356dc;
+$omf-pink: #ff79da;
+$omf-green: #99e2d0;
 $omg-dark-green: #008766;
-$omf-light-grey: #F6F6F6;
-$omf-mid-grey: #EAEAEA;
+$omf-light-grey: #f6f6f6;
+$omf-mid-grey: #eaeaea;
 $omf-dark-grey: #353535;
 $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
-$bottom-gradient: linear-gradient(to bottom, $omf-purple, $omf-pink);
+
+@mixin phone-tablet {
+  @media screen and (min-width: 375px) and (max-width: 1023.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin flex {
+  display: flex;
+}
 
 @mixin button {
   background: $top-gradient;
-  box-shadow: 0px 4px 15px 0px #00000059;
+  box-shadow: 0px 4px 10px 0px #00000040;
   border-radius: 50px;
   border: none;
   span {
@@ -24,76 +40,191 @@ $bottom-gradient: linear-gradient(to bottom, $omf-purple, $omf-pink);
     margin: 17px;
   }
   &:hover {
-  opacity:0.85
-}
+    opacity: 0.85;
+    box-shadow: 0px 4px 15px 0px #00000059;
+  }
 }
 
 @mixin h1 {
-font-family: "shrikhand";
-font-size: 24px;
-font-weight: 700;
-margin: 0;
-padding: 20px 0;
+  font-family: "shrikhand";
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
 }
 
 @mixin h2 {
   font-size: 16px;
   font-weight: 300;
   margin: 0;
+  padding-top: 30px;
+  padding-left: 13px;
   text-transform: uppercase;
   div {
-width: 40px;
-height: 3px;
-background-color: $omf-green;
-margin-top: 9px;
+    width: 40px;
+    height: 3px;
+    background-color: $omf-green;
+    margin-top: 9px;
   }
-  }
+}
 
 @mixin card {
-  background-color: white;
-  box-shadow: 0px 4px 15px 0px #0000001A;
-  border-radius: 15px;
-  border: none;
-  margin: 12px 13px;
-  .card-content {
-    display: grid;
-    grid-template-columns: 90% 10%;
-    grid-template-rows: 50% 50%;
-    padding: 10px;
-    align-items: center;
-     .card-dish {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 4px 0;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  .card-detail {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 4px 0;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-  .card-price {
-    font-size: 15px;
-    font-weight: 700;
-    color: $omf-dark-grey;
-    margin: 4px 0;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
+  .card {
+    background-color: white;
+    box-shadow: 0px 4px 15px 0px #0000001a;
+    border-radius: 15px;
+    border: none;
+    margin: 12px 13px;
+    @include desktop {
+      width: 635px;
+    }
+    input {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      .card-content {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 90% 10%;
+        grid-template-rows: 50% 50%;
+        padding: 10px;
+        align-items: center;
+        .card-dish {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 4px 0;
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+        }
+        .card-detail {
+          font-size: 15px;
+          font-weight: 300;
+          margin: 4px 0;
+          grid-column: 1 / 2;
+          grid-row: 2 / 3;
+        }
+        .card-price {
+          font-size: 15px;
+          font-weight: 700;
+          color: $omf-dark-grey;
+          margin: 4px 0;
+          grid-column: 2 / 3;
+          grid-row: 2 / 3;
+          text-align: right;
+        }
+      }
+      .menu-checked {
+        display: none;
+      }
+    }
   }
 
+  input:checked ~ label {
+    cursor: pointer;
+    .card-content {
+      display: grid;
+      grid-template-columns: 90% 10%;
+      grid-template-rows: 50% 50%;
+      padding: 10px;
+      align-items: center;
+      .card-dish {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 4px 0;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        text-overflow: ellipsis;
+      }
+      .card-detail {
+        font-size: 15px;
+        font-weight: 300;
+        margin: 4px 0;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-overflow: ellipsis;
+      }
+      .card-price {
+        font-size: 15px;
+        font-weight: 700;
+        color: $omf-dark-grey;
+        margin: 4px 0;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        text-align: right;
+      }
+    }
+    .menu-checked {
+      animation: translation 0.2s ease;
+      @keyframes translation {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 59px;
+        }
+      }
+      display: flex;
+      position: right;
+      grid-column: 3;
+      grid-row: 1 / 3;
+      width: 59px;
+      border-radius: 0 15px 15px 0;
+      background-color: $omf-green;
+      justify-content: center;
+      align-items: center;
+      i {
+        @include fade-in;
+        color: white;
+      }
+    }
+  }
 }
 
 @mixin center {
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+@mixin fade-in {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.25s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin gelatine {
+  animation-name: gelatine;
+  animation-duration: 0.5s;
+}
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.98, 1.02);
+  }
+}
+
+// page //
 * {
   font-family: "roboto";
 }
@@ -104,134 +235,258 @@ a {
 }
 
 body {
-  display: flex;
+  @include flex;
   justify-content: center;
 
-.main-container {
-  width: 100%;
-  box-sizing: border-box;
+  .main-container {
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: content-box;
 
- header {
-  display: flex;
-
-  .header__icon {
-    @include center;
-  }
-  .logo {
-background-color: white;
-position: relative;
-z-index: 1;
-  img {
-    @include center;
-    max-height: 35px;
-    padding: 14px 0;
-    @media (min-width: 1281px) and (max-width: 1440px) {
-    padding: 30px 0;}
-    }
-  }
-}
-
-main {
-.restaurant-img {
-  object-fit: cover;
-  width: 100%;
-  z-index: -1;
-  @media screen and (min-width: 375px) and (max-width: 1280px) {
-    height: 275px;
-  }
-  @media screen and (min-width: 1281px) and (max-width: 1440px) {
-    height: 383px;
-  }
-}
-
-.menu {
-  background-color: $omf-light-grey;
-  @media screen and (min-width: 1281px) and (max-width: 1440px) {
-  max-width: 1055px;
-  }
-.menu__header {
-  border-radius: 20px 20px 0 0;
-  display: grid;
-  .menu__header-title {
-  @include h1;
-  }
-  .menu__header-icon {
-// la mettre à droite du titre //
-  }
-}
-.menu__appetizers {
-  h2 {
-    @include h2;
-  }
-.card {
-  @include card;
-}
-}
-}
-.order {
-  @include center;
- .order-btn {
-  @include button;
-}
-}
-
-}
-
-footer {
-  padding: 25px 30px;
-  background-color: $omf-dark-grey;
-  color: white;
-  @media (min-width: 1281px) and (max-width: 1440px) {
-    display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-    }
-.footer__logo {
-  font-family: "shrikhand";
-  font-size: 18px;
-  font-weight: 400;
-  font-style: italic;
-  @media (min-width: 1281px) and (max-width: 1440px) {
-padding-left: 100px;
-    }
-}
-.footer {
-  padding-top: 15px;
-  display: grid;
-  @media (min-width: 1281px) and (max-width: 1440px) {
-    display: flex;
-      flex-direction: row;
-      padding-top: 0;
-    }
-  .footer__link {
-    padding: 4px 0;
-    @media (min-width: 1281px) and (max-width: 1440px) {
-      display: flex;
-      padding: 0 15px;
-      }
-  }
-  .footer__link-highlight {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    font-weight: 500;
-    padding: 4px 0;
-    i {
-      grid-column: 1/ 2;
-      @media (min-width: 1281px) and (max-width: 1440px) {
-        display: flex;
-          flex-direction: row;
-          padding: 0 10px;
+    header {
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 4px 0 #00000026;
+      .header__icon {
+        @include flex;
+        color: $omf-dark-grey;
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 21px;
+        @include desktop {
+          margin-top: 37px;
         }
-    }
-    @media (min-width: 1281px) and (max-width: 1440px) {
-      display: flex;
-        flex-direction: row;
-        padding: 0 10px;
       }
+      .logo {
+        @include flex;
+        background-color: white;
+        justify-content: center;
+        img {
+          @include center;
+          max-height: 35px;
+          padding: 14px 0;
+          @include desktop {
+            padding: 30px 0;
+          }
+        }
+      }
+    }
+
+    main {
+      @include flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: relative;
+      @include desktop {
+        align-items: center;
+      }
+      .restaurant-img {
+        @include flex;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        img {
+          object-fit: cover;
+          width: 100%;
+          @include phone-tablet {
+            height: 275px;
+          }
+          @include desktop {
+            height: 385px;
+          }
+        }
+      }
+      .menu {
+        @include flex;
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 25px 25px 0 0;
+        background-color: $omf-light-grey;
+        max-width: 1023px;
+        margin-top: 215px;
+        padding-top: 40px;
+        @include desktop {
+          margin-top: 360px;
+          align-items: center;
+          width: 1055px;
+          min-width: 1024px;
+          max-width: 1055px;
+        }
+        .menu__header {
+          @include flex;
+          @include desktop {
+            @include flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          }
+          .menu__header-title {
+            @include flex;
+            align-items: center;
+            padding-left: 13px;
+            h1 {
+              @include h1;
+            }
+          }
+          .menu__header-like {
+            @include flex;
+            align-items: center;
+            padding-left: 40px;
+            input {
+              width: 24px;
+              height: 24px;
+              display: none;
+            }
+            label {
+              .no-like {
+                display: flex;
+                cursor: pointer;
+                img {
+                  width: 24px;
+                }
+              }
+              .like {
+                display: none;
+              }
+            }
+            input:checked ~ label {
+              .no-like {
+                display: none;
+              }
+              .like {
+                display: flex;
+                cursor: pointer;
+                @include fade-in;
+                @include gelatine;
+                img {
+                  width: 24px;
+                }
+              }
+            }
+          }
+        }
+        .menu__course-1 {
+          animation: 0.5s ease-in-out fadeInCard1;
+          @keyframes fadeInCard1 {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+          h2 {
+            @include h2;
+          }
+          @include card;
+        }
+        .menu__course-2 {
+          animation: 1s ease-in-out fadeInCard2;
+        }
+        @keyframes fadeInCard2 {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        h2 {
+          @include h2;
+        }
+        @include card;
+        .menu__course-3 {
+          animation: 1.5s ease-in-out fadeInCard2;
+        }
+        @keyframes fadeInCard2 {
+          0% {
+            opacity: 0;
+          }
+          66% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        h2 {
+          @include h2;
+        }
+        .card {
+          @include card;
+        }
+        h2 {
+          @include h2;
+        }
+        .card {
+          @include card;
+        }
+      }
+      .order {
+        @include center;
+        padding-top: 28px;
+        padding-bottom: 40px;
+
+        .order-btn {
+          @include button;
+        }
+      }
+    }
+
+    footer {
+      padding: 25px 30px;
+      background-color: $omf-dark-grey;
+      color: white;
+      @include desktop {
+        @include flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .footer__logo {
+        font-family: "shrikhand";
+        font-size: 18px;
+        font-weight: 400;
+        font-style: italic;
+        @include desktop {
+          padding-left: 100px;
+        }
+      }
+      .footer {
+        padding-top: 15px;
+        @include flex;
+        flex-direction: column;
+        @include desktop {
+          @include flex;
+          flex-direction: row;
+          padding-top: 0;
+        }
+        .footer__link {
+          padding: 4px 0;
+          @include desktop {
+            @include flex;
+            padding: 0 15px;
+          }
+        }
+        .footer__link-highlight {
+          font-weight: 500;
+          padding: 4px 0;
+          i {
+            padding-right: 10px;
+            @include desktop {
+              @include flex;
+              flex-direction: row;
+            }
+          }
+          @include desktop {
+            @include flex;
+            flex-direction: row;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
   }
-
-}
-}
-
-}
 }
