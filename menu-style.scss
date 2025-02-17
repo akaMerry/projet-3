@@ -126,15 +126,7 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
         }
       }
       .menu-checked {
-        animation: translation 0.2s ease;
-        @keyframes translation {
-          0% {
-            width: 0;
-          }
-          100% {
-            width: 59px;
-          }
-        }
+        @include translation;
         display: flex;
         grid-column: 3;
         grid-row: 1 / 3;
@@ -192,15 +184,7 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
       }
     }
     .menu-checked {
-      animation: translation 0.2s ease;
-      @keyframes translation {
-        0% {
-          width: 0;
-        }
-        100% {
-          width: 59px;
-        }
-      }
+      @include translation;
       display: flex;
       grid-column: 3;
       grid-row: 1 / 3;
@@ -225,7 +209,7 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 }
 
 @mixin fade-in {
-  animation: fadeIn 0.25s;
+  animation: fadeIn 0.5s ease-in;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -237,7 +221,7 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 }
 
 @mixin gummy {
-  animation: gummy 0.5s;
+  animation: gummy 0.5s ease-in;
 
   @keyframes gummy {
     0% {
@@ -255,6 +239,17 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
   }
 }
 
+@mixin translation {
+  animation: translation 0.25s ease-out;
+  @keyframes translation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 59px;
+    }
+  }
+}
 // page //
 * {
   font-family: "roboto";
@@ -397,7 +392,8 @@ body {
           }
         }
         .menu__course-1 {
-          animation: fadeInCard1 0.5s;
+          opacity: 0;
+          animation: fadeInCard1 1.5s ease forwards;
           @keyframes fadeInCard1 {
             0% {
               opacity: 0;
@@ -412,13 +408,11 @@ body {
           @include card;
         }
         .menu__course-2 {
-          animation: fadeInCard2 1s;
+          opacity: 0;
+          animation: fadeInCard2 1.5s ease 1.5s forwards;
         }
         @keyframes fadeInCard2 {
           0% {
-            opacity: 0;
-          }
-          50% {
             opacity: 0;
           }
           100% {
@@ -430,13 +424,11 @@ body {
         }
         @include card;
         .menu__course-3 {
-          animation: fadeInCard3 1.5s;
+          opacity: 0;
+          animation: fadeInCard3 1.5s ease 3s forwards;
         }
         @keyframes fadeInCard3 {
           0% {
-            opacity: 0;
-          }
-          66% {
             opacity: 0;
           }
           100% {
