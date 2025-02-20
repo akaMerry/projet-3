@@ -72,6 +72,7 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 
 @mixin card {
   .card {
+    position: relative;
     background-color: white;
     box-shadow: 0 4px 15px 0px #0000001a;
     border-radius: 15px;
@@ -81,7 +82,10 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
       width: 635px;
     }
     input {
-      display: none;
+      position: absolute;
+      z-index: -3;
+      width: 1px;
+      height: 1px;
     }
     label {
       cursor: pointer;
@@ -354,13 +358,15 @@ body {
             }
           }
           .menu__header-like {
+            position: relative;
             @include flex;
             align-items: center;
             padding-left: 40px;
             input {
-              width: 24px;
-              height: 24px;
-              display: none;
+              position: absolute;
+              z-index: -3;
+              width: 1px;
+              height: 1px;
             }
             label {
               .no-like {
@@ -500,7 +506,7 @@ body {
           @include desktop {
             @include flex;
             flex-direction: row;
-            padding: 0 10px;
+            padding: 0 15px;
           }
         }
       }
