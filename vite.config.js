@@ -9,10 +9,19 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        nested: resolve(__dirname, "restaurant-la-palette-du-gout/index.html"),
-        nested: resolve(__dirname, "restaurant-la-note-enchantee/index.html"),
-        nested: resolve(__dirname, "restaurant-le-delice-des-sens/index.html"),
-        nested: resolve(__dirname, "restaurant-a-la-francaise/index.html"),
+        "palette-du-gout": resolve(
+          __dirname,
+          "restaurant-la-palette-du-gout.html"
+        ),
+        "la-note-enchantee": resolve(
+          __dirname,
+          "restaurant-la-note-enchantee.html"
+        ),
+        "le-delice-des-sens": resolve(
+          __dirname,
+          "restaurant-le-delice-des-sens.html"
+        ),
+        "a-la-francaise": resolve(__dirname, "restaurant-a-la-francaise.html"),
       },
     },
   },
