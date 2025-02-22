@@ -29,19 +29,21 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 
 @mixin button {
   background: $top-gradient;
-  box-shadow: 0 4px 10px 0px #00000040;
+  box-shadow: 0px 4px 10px 0px #00000040;
   border-radius: 50px;
   border: none;
   span {
-    display: flex;
+    @include flex;
     font-size: 16px;
     color: white;
     text-align: center;
     margin: 17px;
   }
-  &:hover {
-    opacity: 0.85;
-    box-shadow: 0 4px 15px 0px #00000059;
+  & {
+    &:hover {
+      opacity: 0.85;
+      box-shadow: 0px 4px 15px 0px #00000059;
+    }
   }
 }
 
@@ -86,6 +88,8 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
       z-index: -3;
       width: 1px;
       height: 1px;
+      left: 5px;
+      top: 5px;
     }
     label {
       cursor: pointer;
@@ -372,6 +376,8 @@ body {
               z-index: -3;
               width: 1px;
               height: 1px;
+              left: 10px;
+              top: 10px;
             }
             label {
               .no-like {

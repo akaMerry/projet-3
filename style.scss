@@ -39,9 +39,11 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
     text-align: center;
     margin: 17px;
   }
-  &:hover {
-    opacity: 0.85;
-    box-shadow: 0px 4px 15px 0px #00000059;
+  & {
+    &:hover {
+      opacity: 0.85;
+      box-shadow: 0px 4px 15px 0px #00000059;
+    }
   }
 }
 
@@ -158,9 +160,9 @@ body {
       height: 100%;
       @include fade-out;
       .loader__logo {
-        @include center;
         background-color: white;
         position: relative;
+        @include center;
         @include desktop {
           box-shadow: none;
         }
