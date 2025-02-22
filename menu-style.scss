@@ -214,43 +214,48 @@ $top-gradient: linear-gradient(to top, $omf-purple, $omf-pink);
 
 @mixin fade-in {
   animation: fadeIn 0.5s ease-in;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
+  & {
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 }
 
 @mixin gummy {
   animation: gummy 0.5s ease-in;
-
-  @keyframes gummy {
-    0% {
-      transform: scale(1, 1);
-    }
-    25% {
-      transform: scale(0.9, 1.1);
-    }
-    50% {
-      transform: scale(1.1, 0.9);
-    }
-    75% {
-      transform: scale(0.98, 1.02);
+  & {
+    @keyframes gummy {
+      0% {
+        transform: scale(1, 1);
+      }
+      25% {
+        transform: scale(0.9, 1.1);
+      }
+      50% {
+        transform: scale(1.1, 0.9);
+      }
+      75% {
+        transform: scale(0.98, 1.02);
+      }
     }
   }
 }
 
 @mixin translation {
   animation: translation 0.25s ease-out;
-  @keyframes translation {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 59px;
+  & {
+    @keyframes translation {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 59px;
+      }
     }
   }
 }
